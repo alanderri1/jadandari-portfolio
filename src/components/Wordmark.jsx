@@ -1,7 +1,7 @@
 // Custom typographic wordmark used in place of a logo image.
 // "Jad Andari" is set in italic Playfair Display with a hand-inked
 // underline stroke drawn as an SVG path.
-export default function Wordmark({ className = '', size = 'md', light = false, blend = false }) {
+export default function Wordmark({ className = '', size = 'md' }) {
   const sizes = {
     sm: 'text-xl sm:text-2xl',
     md: 'text-3xl sm:text-4xl',
@@ -11,9 +11,7 @@ export default function Wordmark({ className = '', size = 'md', light = false, b
 
   return (
     <span
-      className={`relative inline-block font-display italic font-semibold tracking-tight ${
-        blend ? 'text-canvas mix-blend-difference' : light ? 'text-canvas' : 'text-ink'
-      } ${sizes[size]} ${className}`}
+      className={`relative inline-block font-display italic font-semibold tracking-tight text-ink ${sizes[size]} ${className}`}
     >
       Jad Andari
       <svg
@@ -25,7 +23,7 @@ export default function Wordmark({ className = '', size = 'md', light = false, b
         <path
           d="M2 12 C 40 4, 80 18, 120 9 S 200 3, 218 11"
           fill="none"
-          stroke="#c9862c"
+          stroke="#3f6b4c"
           strokeWidth="4"
           strokeLinecap="round"
         />

@@ -37,7 +37,7 @@ export default function Lightbox({ portrait, onClose, onNext, onPrev }) {
             onClick={onClose}
             aria-label="Close"
             data-cursor-hover
-            className="absolute top-5 right-5 sm:top-8 sm:right-8 w-12 h-12 rounded-full border border-canvas/30 text-canvas flex items-center justify-center hover:border-ochre hover:text-ochre transition-colors z-10"
+            className="absolute top-5 right-5 sm:top-8 sm:right-8 w-12 h-12 rounded-full border border-canvas/30 text-canvas flex items-center justify-center hover:border-green hover:text-green transition-colors z-10"
           >
             <span className="relative block w-4 h-4">
               <span className="absolute inset-0 top-1/2 -translate-y-1/2 h-[2px] w-full bg-current rotate-45" />
@@ -53,7 +53,7 @@ export default function Lightbox({ portrait, onClose, onNext, onPrev }) {
             }}
             aria-label="Previous artwork"
             data-cursor-hover
-            className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-14 sm:h-14 rounded-full border border-canvas/30 text-canvas flex items-center justify-center hover:border-ochre hover:text-ochre transition-colors z-10"
+            className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-14 sm:h-14 rounded-full border border-canvas/30 text-canvas flex items-center justify-center hover:border-green hover:text-green transition-colors z-10"
           >
             &#8592;
           </button>
@@ -65,7 +65,7 @@ export default function Lightbox({ portrait, onClose, onNext, onPrev }) {
             }}
             aria-label="Next artwork"
             data-cursor-hover
-            className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-14 sm:h-14 rounded-full border border-canvas/30 text-canvas flex items-center justify-center hover:border-ochre hover:text-ochre transition-colors z-10"
+            className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-14 sm:h-14 rounded-full border border-canvas/30 text-canvas flex items-center justify-center hover:border-green hover:text-green transition-colors z-10"
           >
             &#8594;
           </button>
@@ -87,7 +87,7 @@ export default function Lightbox({ portrait, onClose, onNext, onPrev }) {
               />
             </div>
             <div className="mt-6 md:mt-0 text-canvas">
-              <span className="text-[10px] uppercase tracking-[0.25em] text-ochre">
+              <span className="text-[10px] uppercase tracking-[0.25em] text-green">
                 {portrait.category}
               </span>
               <h2 className="font-display italic text-3xl sm:text-4xl mt-2 leading-tight">

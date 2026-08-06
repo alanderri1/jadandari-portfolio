@@ -1,127 +1,127 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import Wordmark from './Wordmark'
 
 const LINKS = [
-  { to: '/', label: 'Home', num: '01' },
-  { to: '/gallery', label: 'Gallery', num: '02' },
-  { to: '/about', label: 'About', num: '03' },
-  { to: '/process', label: 'Process', num: '04' },
-  { to: '/contact', label: 'Contact', num: '05' },
+  { to: '/', label: 'Home' },
+  { to: '/portraits', label: 'Portraits' },
+  { to: '/films', label: 'Films' },
 ]
 
-const overlayVariants = {
-  closed: { clipPath: 'circle(2% at calc(100% - 3rem) 3rem)', transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] } },
-  open: { clipPath: 'circle(150% at calc(100% - 3rem) 3rem)', transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] } },
-}
-
-const listVariants = {
-  closed: {},
-  open: { transition: { staggerChildren: 0.07, delayChildren: 0.25 } },
+const panelVariants = {
+  closed: { opacity: 0, scale: 0.92, y: -8, transition: { duration: 0.18, ease: [0.4, 0, 1, 1] } },
+  open: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: 0.28, ease: [0.22, 1, 0.36, 1], staggerChildren: 0.06, delayChildren: 0.05 },
+  },
 }
 
 const itemVariants = {
-  closed: { opacity: 0, y: 30 },
-  open: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
+  closed: { opacity: 0, x: 10 },
+  open: { opacity: 1, x: 0, transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] } },
 }
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
   const location = useLocation()
+  const panelRef = useRef(null)
 
   useEffect(() => {
     setOpen(false)
   }, [location.pathname])
 
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : ''
+    if (!open) return
+    const onClickOutside = (e) => {
+      if (panelRef.current && !panelRef.current.contains(e.target)) setOpen(false)
+    }
+    const onKey = (e) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('mousedown', onClickOutside)
+    document.addEventListener('keydown', onKey)
     return () => {
-      document.body.style.overflow = ''
+      document.removeEventListener('mousedown', onClickOutside)
+      document.removeEventListener('keydown', onKey)
     }
   }, [open])
 
   return (
-    <>
-      <header className="fixed top-0 left-0 right-0 z-[80] flex items-center justify-between px-5 sm:px-10 py-5 sm:py-7 pointer-events-none">
-        <Link to="/" className="pointer-events-auto" data-cursor-hover>
-          <Wordmark size="sm" light={open} blend={!open} />
-        </Link>
+    <header className="fixed top-0 left-0 right-0 z-[80] flex items-center justify-between px-5 sm:px-10 py-5 sm:py-6">
+      <Link to="/" data-cursor-hover>
+        <Wordmark size="sm" />
+      </Link>
 
+      <div ref={panelRef} className="relative">
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
           data-cursor-hover
-          className="pointer-events-auto relative w-14 h-14 rounded-full flex items-center justify-center border border-ink/20 bg-canvas/70 backdrop-blur-sm shadow-sm hover:border-crimson/60 transition-colors"
+          className="relative w-12 h-12 rounded-full flex items-center justify-center border border-ink/25 bg-canvas/80 backdrop-blur-sm shadow-sm hover:border-green transition-colors"
         >
-          <span className="relative w-6 h-4 block">
+          <span className="relative w-5 h-3.5 block">
             <span
-              className={`absolute left-0 top-0 w-full h-[2px] rounded-full transition-all duration-300 ${
-                open ? 'bg-canvas rotate-45 top-1/2 -translate-y-1/2' : 'bg-ink'
+              className={`absolute left-0 top-0 w-full h-[2px] rounded-full bg-ink transition-all duration-300 ${
+                open ? 'rotate-45 top-1/2 -translate-y-1/2' : ''
               }`}
             />
             <span
-              className={`absolute left-0 bottom-0 w-full h-[2px] rounded-full transition-all duration-300 ${
-                open ? 'bg-canvas -rotate-45 bottom-1/2 translate-y-1/2' : 'bg-ink'
+              className={`absolute left-0 bottom-0 w-full h-[2px] rounded-full bg-ink transition-all duration-300 ${
+                open ? '-rotate-45 bottom-1/2 translate-y-1/2' : ''
               }`}
             />
           </span>
         </button>
-      </header>
 
-      <AnimatePresence>
-        {open && (
-          <motion.nav
-            key="overlay"
-            initial="closed"
-            animate="open"
-            exit="closed"
-            variants={overlayVariants}
-            className="fixed inset-0 z-[75] bg-ink text-canvas bg-oil-2"
-            aria-label="Primary"
-          >
-            <div className="absolute inset-0 canvas-texture opacity-30" aria-hidden="true" />
-            <motion.ul
-              variants={listVariants}
+        <AnimatePresence>
+          {open && (
+            <motion.nav
+              key="panel"
               initial="closed"
               animate="open"
               exit="closed"
-              className="relative h-full w-full flex flex-col items-center justify-center gap-2 sm:gap-4"
+              variants={panelVariants}
+              style={{ transformOrigin: 'top right' }}
+              className="absolute right-0 mt-3 w-52 rounded-sm bg-canvasDeep/95 backdrop-blur-sm border border-ink/15 shadow-[0_15px_40px_rgba(20,18,16,0.25)] overflow-hidden"
+              aria-label="Primary"
             >
-              {LINKS.map((link) => (
-                <motion.li key={link.to} variants={itemVariants} className="overflow-hidden">
-                  <Link
-                    to={link.to}
-                    data-cursor-hover
-                    className="group flex items-baseline gap-4 sm:gap-6 font-display italic text-4xl sm:text-6xl md:text-7xl font-semibold text-canvas/90 hover:text-ochre transition-colors"
-                  >
-                    <span className="font-sans not-italic text-xs sm:text-sm text-ochre/80 tracking-[0.2em] self-center">
-                      {link.num}
-                    </span>
-                    <span className="relative">
+              <ul className="py-3">
+                {LINKS.map((link) => (
+                  <motion.li key={link.to} variants={itemVariants}>
+                    <Link
+                      to={link.to}
+                      data-cursor-hover
+                      className={`group flex items-center justify-between px-5 py-2.5 font-display italic text-xl transition-colors ${
+                        location.pathname === link.to ? 'text-green' : 'text-ink hover:text-green'
+                      }`}
+                    >
                       {link.label}
-                      <span className="absolute left-0 -bottom-1 w-0 group-hover:w-full h-[3px] bg-crimson transition-all duration-300" />
-                    </span>
-                  </Link>
-                </motion.li>
-              ))}
-            </motion.ul>
-
-            <motion.div
-              variants={itemVariants}
-              className="absolute bottom-8 left-0 right-0 flex justify-center gap-6 text-xs tracking-[0.25em] uppercase text-canvas/50"
-            >
-              <span>Instagram</span>
-              <span>·</span>
-              <span>Pinterest</span>
-              <span>·</span>
-              <span>Email</span>
-            </motion.div>
-          </motion.nav>
-        )}
-      </AnimatePresence>
-    </>
+                      <span className="w-1.5 h-1.5 rounded-full bg-green opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+              <div className="px-5 pb-4">
+                <svg viewBox="0 0 200 12" className="w-full h-2" preserveAspectRatio="none" aria-hidden="true">
+                  <path
+                    d="M0 6 C 30 1, 60 11, 100 6 S 170 1, 200 6"
+                    fill="none"
+                    stroke="#3f6b4c"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    opacity="0.6"
+                  />
+                </svg>
+              </div>
+            </motion.nav>
+          )}
+        </AnimatePresence>
+      </div>
+    </header>
   )
 }

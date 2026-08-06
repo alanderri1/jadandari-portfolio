@@ -10,7 +10,7 @@ export default function PortraitCard({ portrait, onOpen, index = 0 }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.6, delay: (index % 6) * 0.06, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative block w-full text-left rounded-sm overflow-hidden bg-canvasDeep shadow-[0_8px_30px_rgba(27,20,15,0.15)] focus:outline-none focus-visible:ring-2 focus-visible:ring-crimson"
+      className="group relative block w-full text-left rounded-sm overflow-hidden bg-canvasDeep shadow-[0_8px_30px_rgba(20,18,16,0.2)] focus:outline-none focus-visible:ring-2 focus-visible:ring-green"
     >
       <div className="relative overflow-hidden">
         <img

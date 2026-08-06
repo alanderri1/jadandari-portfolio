@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 ::selection {
-  background: #c9862c;
-  color: #1b140f;
+  background: #3f6b4c;
+  color: #c9b78d;
 }
 
 html {
@@ -67,10 +67,10 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #e9dcc0;
+  background: #b5a179;
 }
 ::-webkit-scrollbar-thumb {
-  background: #9c2b2b;
+  background: #3f6b4c;
   border-radius: 999px;
-  border: 2px solid #e9dcc0;
+  border: 2px solid #b5a179;
 }
