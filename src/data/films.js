@@ -33,7 +33,7 @@ export const films = [
     role: 'director, producer',
     youtubeId: 'KEzb26KiCyk',
     description:
-      'an intimate exploration of life in bzebdine, a small rural village in mount lebanon — a visual poem journeying through rural mount lebanon and the people who live there.',
+      'An intimate exploration of life in Bzebdine, a small rural village in Mount Lebanon.',
   },
   {
     id: 'tadur-trailer',
@@ -42,7 +42,7 @@ export const films = [
     role: 'writer, director, producer',
     youtubeId: 'Jqt7PKs7he8',
     description:
-      'a pastoral escapade depicting an imaginary world deep in mount lebanon, where criminals, impoverished farmers, and monastic sages are immersed in both beauty and brutality. the arabic word "tadur" means to spin, orbit, turn, revolve, or circle.',
+      'Tadur is a pastoral escapade. It depicts an imaginary world deep in Mount Lebanon, where criminals, impoverished farmers, and monastic sages are immersed in both beauty and brutality. The Arabic word "tadur" encapsulates the essence of this world, meaning to spin, orbit, turn, revolve, rotate, cycle, or circle.',
   },
   {
     id: 'middle-state-trailer',
@@ -51,7 +51,7 @@ export const films = [
     role: 'writer, director',
     youtubeId: 'nmNamS3CEpU',
     description:
-      'a trip through china during the spring festival season, filmed shortly after returning to lebanon during the 2024 war. the voiceovers and music are composed entirely of whatsapp messages from friends and family.',
+      'This film follows my trip through China during the Spring Festival season. The voice overs and music are entirely composed of Whatsapp messages from friends and family. For context: I moved back to Lebanon (from California) to be with my parents during the 2024 war. As soon as a ceasefire was declared, I flew to China for a month to take in new scenery. While I was captivated by the beauty and rhythm of life there, I still found myself deeply missing both Lebanon and California.',
   },
   {
     id: 'stove-full',
@@ -60,7 +60,7 @@ export const films = [
     role: 'director, producer',
     youtubeId: 'aprBN84Lh1k',
     description:
-      'the full-length documentary: a lebanese expatriate returns to bzebdine to rediscover images from his childhood, journeying through the spirit of rural mount lebanon and the people who live there.',
+      'This 2019 documentary is an intimate exploration of life in Bzebdine, a small rural village in Mount Lebanon.',
   },
   {
     id: 'tadur-full',
@@ -69,7 +69,7 @@ export const films = [
     role: 'writer, director, producer',
     youtubeId: 'WhCHsNgF_bA',
     description:
-      'the full-length cut of tadur, immersed in the beauty and brutality of an imagined mount lebanon where criminals, farmers, and monastic sages share the same ground.',
+      'Tadur is a pastoral escapade. It depicts an imaginary world deep in Mount Lebanon, where criminals, impoverished farmers, and monastic sages are immersed in both beauty and brutality. The Arabic word "tadur" encapsulates the essence of this world, meaning to spin, orbit, turn, revolve, rotate, cycle, or circle.',
   },
   {
     id: 'middle-state-full',
@@ -78,7 +78,7 @@ export const films = [
     role: 'writer, director',
     youtubeId: 'IMwylRW5bGk',
     description:
-      'the full-length version of middle state, journeying through china in the weeks after a ceasefire — a visual essay built from borrowed voices and unfamiliar scenery.',
+      'This film follows my trip through China during the Spring Festival season. The voice overs and music are entirely composed of Whatsapp messages from friends and family.',
   },
 ]
 
