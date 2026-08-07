@@ -1,7 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Nav from './components/Nav'
-import Footer from './components/Footer'
 import GrainOverlay from './components/GrainOverlay'
 import CustomCursor from './components/CustomCursor'
 import PageTransition from './components/PageTransition'
@@ -27,8 +26,6 @@ export default function App() {
           </Routes>
         </AnimatePresence>
       </main>
-
-      <Footer />
     </div>
   )
 }

@@ -1,19 +1,22 @@
 import Reveal from './Reveal'
 
 // Playable YouTube embed card — same visual language as PortraitCard
-// (rounded-sm panel, canvasDeep background) but holding a live iframe
-// instead of a static image, so films are watchable in place.
+// (transparent panel, no frame) but holding a live iframe instead of a
+// static image, so films are watchable in place.
 //
-// A handful of uploads have embedding disabled by the uploader at the
-// platform level (a per-video YouTube setting, not something fixable from
-// here) — set `embeddable: false` on those entries in films.js and this
-// renders a clean thumbnail card that opens the video on YouTube instead
-// of showing YouTube's own broken-looking "video unavailable" iframe.
+// A handful of uploads have embedding disabled by the uploader in YouTube
+// Studio (Video details → Show more → Distribution → "Allow embedding").
+// That's an account-level setting, not something fixable from this code —
+// set `embeddable: false` on those entries in films.js and this renders a
+// clean thumbnail card that opens the video on YouTube instead of showing
+// YouTube's own broken-looking "video unavailable" iframe. Once the
+// uploader flips that setting on, just drop the flag and it'll embed and
+// play inline like everything else.
 export default function VideoCard({ film, delay = 0 }) {
   return (
     <Reveal delay={delay}>
-      <div className="rounded-sm overflow-hidden bg-canvasDeep shadow-[0_8px_30px_rgba(20,18,16,0.2)]">
-        <div className="aspect-video w-full bg-ink">
+      <div className="rounded-sm overflow-hidden bg-transparent shadow-[0_8px_30px_rgba(20,18,16,0.2)]">
+        <div className="aspect-video w-full bg-canvas">
           {film.embeddable === false ? (
             <a
               href={`https://www.youtube.com/watch?v=${film.youtubeId}`}
@@ -28,11 +31,11 @@ export default function VideoCard({ film, delay = 0 }) {
                 loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-ink/40 group-hover:bg-ink/55 transition-colors flex flex-col items-center justify-center gap-3 text-canvas">
-                <span className="w-14 h-14 rounded-full bg-canvas/90 text-ink flex items-center justify-center text-xl">
+              <div className="absolute inset-0 bg-canvas/40 group-hover:bg-canvas/55 transition-colors flex flex-col items-center justify-center gap-3 text-ink">
+                <span className="w-14 h-14 rounded-full bg-ink/90 text-canvas flex items-center justify-center text-xl">
                   &#9654;
                 </span>
-                <span className="text-xs uppercase tracking-[0.2em]">Watch on YouTube</span>
+                <span className="text-xs tracking-[0.2em]">watch on youtube</span>
               </div>
             </a>
           ) : (
@@ -47,8 +50,7 @@ export default function VideoCard({ film, delay = 0 }) {
           )}
         </div>
         <div className="p-4 sm:p-5">
-          <h3 className="font-display italic text-xl sm:text-2xl text-ink leading-snug">{film.title}</h3>
-          <p className="mt-1 text-sm text-ink/60">
+          <p className="text-sm text-ink/60">
             {film.role} &middot; {film.year}
           </p>
           {film.description && (

@@ -1,92 +1,84 @@
 // ---------------------------------------------------------------------------
-// FILM DATA — single source of truth for the Films page and the "Films"
-// section on the Home page.
+// FILM DATA — single source of truth for the Films page.
 //
-// This list mirrors every public upload on the channel at
-// youtube.com/@jadandari (verified via yt-dlp).
+// This mirrors every public upload on the channel at youtube.com/@jadandari
+// (verified via yt-dlp).
+//
+// Display order: Stove, Tadur, and Middle State trailers lead as the first
+// row (left to right); each project's full-length cut follows directly
+// beneath its trailer in the second row, in the same left-to-right order.
 //
 // HOW TO REPLACE / EXTEND:
 //   1. youtubeId — the 11-character id from the video's YouTube URL
 //      (https://www.youtube.com/watch?v=THIS_PART). Videos are embedded
 //      directly via youtube-nocookie.com so they're playable in place,
 //      exactly like on YouTube.
-//   2. title, year, role, description — plain strings, edit freely.
-//   3. featured — set true to have a video appear in the Home page
-//      "Films" section. Keep this to 2 items for that section's
-//      two-column layout.
-//   4. embeddable — omit (defaults to true) for normal inline playback.
+//   2. title, year, role, description — plain strings, edit freely. Site
+//      copy is all-lowercase by design; keep new entries lowercase too
+//      (Arabic text is unaffected either way).
+//   3. embeddable — omit (defaults to true) for normal inline playback.
 //      Set to false only if YouTube's own iframe shows "video unavailable —
-//      playback on other websites has been disabled by the video owner"
-//      (a per-video setting controlled by the uploader, not fixable from
-//      here). VideoCard then renders a thumbnail card that opens the video
-//      on YouTube in a new tab instead of a broken embed. The full-length
-//      "Stove وجاق (HD with English subtitles)" cut below is the one
-//      example of this on the channel today.
-//   5. To add a new upload from the channel, copy an entry below and swap
-//      in the new video's id/title/etc. Channel: youtube.com/@jadandari
+//      playback on other websites has been disabled by the video owner".
+//      This is controlled per-video in YouTube Studio, NOT here: open the
+//      video → Details → Show more → Distribution → toggle "Allow
+//      embedding" on, then remove `embeddable: false` below and it'll play
+//      inline like the rest.
 // ---------------------------------------------------------------------------
 
 export const films = [
   {
-    id: 'middle-state-trailer',
-    title: 'Middle State البَيْن (Trailer)',
-    year: '2025',
-    role: 'Writer, Director',
-    youtubeId: 'nmNamS3CEpU',
-    featured: false,
+    id: 'stove-trailer',
+    title: 'stove وجاق (trailer)',
+    year: '2019',
+    role: 'director, producer',
+    youtubeId: 'KEzb26KiCyk',
     description:
-      'A trip through China during the Spring Festival season, filmed shortly after returning to Lebanon during the 2024 war. The voiceovers and music are composed entirely of WhatsApp messages from friends and family.',
-  },
-  {
-    id: 'middle-state-full',
-    title: 'Middle State البَيْن (Full Film, English Subtitles)',
-    year: '2025',
-    role: 'Writer, Director',
-    youtubeId: 'IMwylRW5bGk',
-    featured: false,
-    description:
-      'The full-length version of Middle State, journeying through China in the weeks after a ceasefire — a visual essay built from borrowed voices and unfamiliar scenery.',
+      'an intimate exploration of life in bzebdine, a small rural village in mount lebanon — a visual poem journeying through rural mount lebanon and the people who live there.',
   },
   {
     id: 'tadur-trailer',
-    title: 'Tadur تدور (Trailer)',
+    title: 'tadur تدور (trailer)',
     year: '2024',
-    role: 'Writer, Director, Producer',
+    role: 'writer, director, producer',
     youtubeId: 'Jqt7PKs7he8',
-    featured: true,
     description:
-      'A pastoral escapade depicting an imaginary world deep in Mount Lebanon, where criminals, impoverished farmers, and monastic sages are immersed in both beauty and brutality. The Arabic word "tadur" means to spin, orbit, turn, revolve, or circle.',
+      'a pastoral escapade depicting an imaginary world deep in mount lebanon, where criminals, impoverished farmers, and monastic sages are immersed in both beauty and brutality. the arabic word "tadur" means to spin, orbit, turn, revolve, or circle.',
   },
   {
-    id: 'tadur-full',
-    title: 'Tadur تدور (Full Film, English Subtitles)',
-    year: '2024',
-    role: 'Writer, Director, Producer',
-    youtubeId: 'WhCHsNgF_bA',
-    featured: false,
+    id: 'middle-state-trailer',
+    title: 'middle state البَيْن (trailer)',
+    year: '2025',
+    role: 'writer, director',
+    youtubeId: 'nmNamS3CEpU',
     description:
-      'The full-length cut of Tadur, immersed in the beauty and brutality of an imagined Mount Lebanon where criminals, farmers, and monastic sages share the same ground.',
-  },
-  {
-    id: 'stove-trailer',
-    title: 'Stove وجاق (Trailer)',
-    year: '2019',
-    role: 'Director, Producer',
-    youtubeId: 'KEzb26KiCyk',
-    featured: true,
-    description:
-      'An intimate exploration of life in Bzebdine, a small rural village in Mount Lebanon — a visual poem journeying through rural Mount Lebanon and the people who live there.',
+      'a trip through china during the spring festival season, filmed shortly after returning to lebanon during the 2024 war. the voiceovers and music are composed entirely of whatsapp messages from friends and family.',
   },
   {
     id: 'stove-full',
-    title: 'Stove وجاق (Full Film, English Subtitles)',
+    title: 'stove وجاق (full film, english subtitles)',
     year: '2019',
-    role: 'Director, Producer',
+    role: 'director, producer',
     youtubeId: 'aprBN84Lh1k',
-    featured: false,
-    embeddable: false,
     description:
-      'The full-length documentary: a Lebanese expatriate returns to Bzebdine to rediscover images from his childhood, journeying through the spirit of rural Mount Lebanon and the people who live there.',
+      'the full-length documentary: a lebanese expatriate returns to bzebdine to rediscover images from his childhood, journeying through the spirit of rural mount lebanon and the people who live there.',
+  },
+  {
+    id: 'tadur-full',
+    title: 'tadur تدور (full film, english subtitles)',
+    year: '2024',
+    role: 'writer, director, producer',
+    youtubeId: 'WhCHsNgF_bA',
+    description:
+      'the full-length cut of tadur, immersed in the beauty and brutality of an imagined mount lebanon where criminals, farmers, and monastic sages share the same ground.',
+  },
+  {
+    id: 'middle-state-full',
+    title: 'middle state البَيْن (full film, english subtitles)',
+    year: '2025',
+    role: 'writer, director',
+    youtubeId: 'IMwylRW5bGk',
+    description:
+      'the full-length version of middle state, journeying through china in the weeks after a ceasefire — a visual essay built from borrowed voices and unfamiliar scenery.',
   },
 ]
 

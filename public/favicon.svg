@@ -1,20 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#c9b78d"/>
+  <rect width="64" height="64" rx="14" fill="#450101"/>
   <text
     x="32"
-    y="39"
+    y="41"
     text-anchor="middle"
-    font-family="Georgia, 'Playfair Display', 'Times New Roman', serif"
-    font-style="italic"
-    font-weight="700"
-    font-size="30"
-    fill="#141210"
+    font-family="'Jost', 'Century Gothic', 'Futura', Arial, sans-serif"
+    font-weight="600"
+    font-size="28"
+    fill="#e8d574"
   >JA</text>
-  <path
-    d="M12 46 C 22 41, 30 49, 40 44 S 54 40, 58 45"
-    fill="none"
-    stroke="#3f6b4c"
-    stroke-width="4"
-    stroke-linecap="round"
-  />
 </svg>
