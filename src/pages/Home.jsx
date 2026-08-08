@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import SocialLinks from '../components/SocialLinks'
-import mainPhoto from '../assets/Images/Main.jpg'
+import mainPhoto from '../assets/Images/Main.jpeg'
 
 const GMAIL_COMPOSE_URL = 'https://mail.google.com/mail/?view=cm&fs=1&to=alanderri@gmail.com'
 
