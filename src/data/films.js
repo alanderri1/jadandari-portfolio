@@ -4,9 +4,8 @@
 // This mirrors every public upload on the channel at youtube.com/@jadandari
 // (verified via yt-dlp).
 //
-// Display order: Stove, Tadur, and Middle State trailers lead as the first
-// row (left to right); each project's full-length cut follows directly
-// beneath its trailer in the second row, in the same left-to-right order.
+// Display order: Stove, Tadur, and Middle State trailers, left to right.
+// Full-length cuts are intentionally omitted — trailers only.
 //
 // HOW TO REPLACE / EXTEND:
 //   1. youtubeId — the 11-character id from the video's YouTube URL
@@ -52,33 +51,6 @@ export const films = [
     youtubeId: 'nmNamS3CEpU',
     description:
       'This film follows my trip through China during the Spring Festival season. The voice overs and music are entirely composed of Whatsapp messages from friends and family. For context: I moved back to Lebanon (from California) to be with my parents during the 2024 war. As soon as a ceasefire was declared, I flew to China for a month to take in new scenery. While I was captivated by the beauty and rhythm of life there, I still found myself deeply missing both Lebanon and California.',
-  },
-  {
-    id: 'stove-full',
-    title: 'stove وجاق (full film, english subtitles)',
-    year: '2019',
-    role: 'director, producer',
-    youtubeId: 'aprBN84Lh1k',
-    description:
-      'This 2019 documentary is an intimate exploration of life in Bzebdine, a small rural village in Mount Lebanon.',
-  },
-  {
-    id: 'tadur-full',
-    title: 'tadur تدور (full film, english subtitles)',
-    year: '2024',
-    role: 'writer, director, producer',
-    youtubeId: 'WhCHsNgF_bA',
-    description:
-      'Tadur is a pastoral escapade. It depicts an imaginary world deep in Mount Lebanon, where criminals, impoverished farmers, and monastic sages are immersed in both beauty and brutality. The Arabic word "tadur" encapsulates the essence of this world, meaning to spin, orbit, turn, revolve, rotate, cycle, or circle.',
-  },
-  {
-    id: 'middle-state-full',
-    title: 'middle state البَيْن (full film, english subtitles)',
-    year: '2025',
-    role: 'writer, director',
-    youtubeId: 'IMwylRW5bGk',
-    description:
-      'This film follows my trip through China during the Spring Festival season. The voice overs and music are entirely composed of Whatsapp messages from friends and family.',
   },
 ]
 

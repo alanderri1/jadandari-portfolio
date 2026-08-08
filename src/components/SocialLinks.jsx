@@ -69,7 +69,7 @@ const SOCIALS = [
     href: 'https://today.lorientlejour.com/article/1295988/making-movies-in-lebanons-season-of-crises.html',
     icon: icons.press,
   },
-  { label: 'Shop (Etsy)', href: 'https://ajadpaintingprint.etsy.com', icon: icons.store },
+  { label: 'Shop (Etsy)', href: 'https://jadpaintingprints.etsy.com/', icon: icons.store },
 ]
 
 export default function SocialLinks() {

@@ -79,11 +79,11 @@ export default function Lightbox({ portrait, onClose, onNext, onPrev }) {
             onClick={(e) => e.stopPropagation()}
             className="w-full max-w-5xl max-h-full grid md:grid-cols-[1.3fr_1fr] gap-0 md:gap-8 items-center"
           >
-            <div className="relative max-h-[55vh] md:max-h-[80vh] overflow-hidden rounded-sm shadow-2xl">
+            <div className="relative max-h-[55vh] md:max-h-[80vh] flex items-center justify-center rounded-sm shadow-2xl">
               <img
                 src={portrait.image}
                 alt={portrait.title}
-                className="w-full h-full object-cover"
+                className="max-w-full max-h-[55vh] md:max-h-[80vh] w-auto h-auto object-contain"
               />
             </div>
             <div className="mt-6 md:mt-0 text-ink">
