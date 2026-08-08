@@ -17,7 +17,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             src={mainPhoto}
             alt="Jad Andari"
-            className="w-56 sm:w-72 h-auto rounded-sm shadow-[0_15px_40px_rgba(20,18,16,0.25)] shrink-0"
+            className="w-44 sm:w-56 h-auto rounded-sm shadow-[0_15px_40px_rgba(20,18,16,0.25)] shrink-0"
           />
           <motion.p
             initial={{ opacity: 0, y: 12 }}
