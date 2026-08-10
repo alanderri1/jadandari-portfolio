@@ -20,19 +20,11 @@ import img7 from '../assets/paintings/7.jpg'
 import img8 from '../assets/paintings/8.jpg'
 import img9 from '../assets/paintings/9.jpg'
 import img10 from '../assets/paintings/10.jpg'
-import img11 from '../assets/paintings/11.jpg'
-import img12 from '../assets/paintings/12.jpg'
-import img13 from '../assets/paintings/13.jpg'
-import img14 from '../assets/paintings/14.jpg'
-import img15 from '../assets/paintings/15.jpg'
-import img16 from '../assets/paintings/16.jpg'
-import img17 from '../assets/paintings/17.jpg'
-import img18 from '../assets/paintings/18.jpg'
 
 // Display order: 8 (stove), 10 (tadur), 6 (middle state) lead the page —
 // matching the Films page order — then the rest continue in their original
 // numbering. Grid fills left-to-right, top-to-bottom.
-export const portraits = [
+export const paintings = [
   { id: 'painting-08', title: 'stove', image: img8, description: 'oil on canvas, 70 x 90 cm' },
   { id: 'painting-10', title: 'tadur', image: img10, description: 'oil on canvas, 100 x 50 cm' },
   { id: 'painting-06', title: 'middle state', image: img6, description: 'oil on canvas, 100 x 70 cm' },
@@ -43,14 +35,6 @@ export const portraits = [
   { id: 'painting-05', title: 'untitled', image: img5, description: 'oil on canvas, 69 x 51 cm' },
   { id: 'painting-07', title: 'untitled', image: img7, description: 'oil on paper, 42 x 30 cm' },
   { id: 'painting-09', title: 'untitled', image: img9, description: 'oil on wood, 123 x 58 cm' },
-  { id: 'painting-11', title: 'untitled', image: img11, description: 'oil on paper, 21 x 15 cm' },
-  { id: 'painting-12', title: 'untitled', image: img12, description: 'oil on paper, 21 x 15 cm' },
-  { id: 'painting-13', title: 'untitled', image: img13, description: 'oil on paper, 21 x 15 cm' },
-  { id: 'painting-14', title: 'untitled', image: img14, description: 'oil on paper, 21 x 15 cm' },
-  { id: 'painting-15', title: 'untitled', image: img15, description: 'oil on paper, 21 x 15 cm' },
-  { id: 'painting-16', title: 'untitled', image: img16, description: 'oil on paper, 21 x 15 cm' },
-  { id: 'painting-17', title: 'untitled', image: img17, description: 'oil on paper, 21 x 15 cm' },
-  { id: 'painting-18', title: 'untitled', image: img18, description: 'oil on paper, 21 x 15 cm' },
 ]
 
-export default portraits
+export default paintings

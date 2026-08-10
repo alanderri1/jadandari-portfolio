@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion'
 
-export default function PortraitCard({ portrait, onOpen, index = 0 }) {
+export default function PaintingCard({ painting, onOpen, index = 0 }) {
   return (
     <motion.button
       type="button"
-      onClick={() => onOpen(portrait)}
+      onClick={() => onOpen(painting)}
       data-cursor-hover
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -14,17 +14,17 @@ export default function PortraitCard({ portrait, onOpen, index = 0 }) {
     >
       <div className="relative overflow-hidden">
         <img
-          src={portrait.image}
-          alt={portrait.title}
+          src={painting.image}
+          alt={painting.title}
           loading="lazy"
           className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-110 group-hover:-rotate-1"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/0 to-ink/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
       <div className="p-4">
-        <h3 className="font-display text-xl text-ink leading-snug">{portrait.title}</h3>
-        {portrait.description && (
-          <p className="mt-1 text-sm text-ink/60">{portrait.description}</p>
+        <h3 className="font-display text-xl text-ink leading-snug">{painting.title}</h3>
+        {painting.description && (
+          <p className="mt-1 text-sm text-ink/60">{painting.description}</p>
         )}
       </div>
     </motion.button>

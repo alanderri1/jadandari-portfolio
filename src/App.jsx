@@ -5,7 +5,7 @@ import GrainOverlay from './components/GrainOverlay'
 import CustomCursor from './components/CustomCursor'
 import PageTransition from './components/PageTransition'
 import Home from './pages/Home'
-import Portraits from './pages/Portraits'
+import Paintings from './pages/Paintings'
 import Films from './pages/Films'
 
 export default function App() {
@@ -21,7 +21,7 @@ export default function App() {
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<PageTransition><Home /></PageTransition>} />
-            <Route path="/portraits" element={<PageTransition><Portraits /></PageTransition>} />
+            <Route path="/paintings" element={<PageTransition><Paintings /></PageTransition>} />
             <Route path="/films" element={<PageTransition><Films /></PageTransition>} />
           </Routes>
         </AnimatePresence>

@@ -41,7 +41,7 @@ export default function Home() {
           className="flex flex-wrap items-center justify-center gap-4"
         >
           <Link
-            to="/portraits"
+            to="/paintings"
             data-cursor-hover
             className="px-10 py-3.5 rounded-full bg-ink text-canvas text-sm tracking-[0.15em] hover:bg-accent transition-colors"
           >

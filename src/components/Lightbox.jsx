@@ -1,29 +1,29 @@
 import { useEffect, useCallback } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
-export default function Lightbox({ portrait, onClose, onNext, onPrev }) {
+export default function Lightbox({ painting, onClose, onNext, onPrev }) {
   const handleKey = useCallback(
     (e) => {
-      if (!portrait) return
+      if (!painting) return
       if (e.key === 'Escape') onClose()
       if (e.key === 'ArrowRight') onNext()
       if (e.key === 'ArrowLeft') onPrev()
     },
-    [portrait, onClose, onNext, onPrev]
+    [painting, onClose, onNext, onPrev]
   )
 
   useEffect(() => {
     window.addEventListener('keydown', handleKey)
-    document.body.style.overflow = portrait ? 'hidden' : ''
+    document.body.style.overflow = painting ? 'hidden' : ''
     return () => {
       window.removeEventListener('keydown', handleKey)
       document.body.style.overflow = ''
     }
-  }, [handleKey, portrait])
+  }, [handleKey, painting])
 
   return (
     <AnimatePresence>
-      {portrait && (
+      {painting && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -71,7 +71,7 @@ export default function Lightbox({ portrait, onClose, onNext, onPrev }) {
           </button>
 
           <motion.div
-            key={portrait.id}
+            key={painting.id}
             initial={{ opacity: 0, scale: 0.96, y: 12 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.98 }}
@@ -81,17 +81,17 @@ export default function Lightbox({ portrait, onClose, onNext, onPrev }) {
           >
             <div className="relative max-h-[55vh] md:max-h-[80vh] flex items-center justify-center rounded-sm shadow-2xl">
               <img
-                src={portrait.image}
-                alt={portrait.title}
+                src={painting.image}
+                alt={painting.title}
                 className="max-w-full max-h-[55vh] md:max-h-[80vh] w-auto h-auto object-contain"
               />
             </div>
             <div className="mt-6 md:mt-0 text-ink">
               <h2 className="font-display text-3xl sm:text-4xl leading-tight">
-                {portrait.title}
+                {painting.title}
               </h2>
-              {portrait.description && (
-                <p className="mt-3 text-ink/70 leading-relaxed">{portrait.description}</p>
+              {painting.description && (
+                <p className="mt-3 text-ink/70 leading-relaxed">{painting.description}</p>
               )}
             </div>
           </motion.div>

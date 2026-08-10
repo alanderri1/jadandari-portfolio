@@ -1,6 +1,6 @@
 import Reveal from './Reveal'
 
-// Playable YouTube embed card — same visual language as PortraitCard
+// Playable YouTube embed card — same visual language as PaintingCard
 // (transparent panel, no frame) but holding a live iframe instead of a
 // static image, so films are watchable in place.
 //
