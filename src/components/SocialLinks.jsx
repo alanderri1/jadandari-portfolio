@@ -59,7 +59,7 @@ const icons = {
 }
 
 const SOCIALS = [
-  { label: 'Instagram', href: 'https://www.instagram.com/jad_al3ndari', icon: icons.instagram },
+  // { label: 'Instagram', href: 'https://www.instagram.com/jad_al3ndari', icon: icons.instagram },
   { label: 'YouTube', href: 'https://www.youtube.com/@jadandari', icon: icons.youtube },
   { label: 'Letterboxd', href: 'https://letterboxd.com/director/jad-andari/', icon: icons.letterboxd },
   { label: 'IMDb', href: 'https://www.imdb.com/name/nm9230848/', text: 'IMDb' },

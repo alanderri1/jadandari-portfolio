@@ -4,8 +4,9 @@
 // title and description are copied verbatim from the sheet.
 //
 // HOW TO EXTEND:
-//   1. image — import a new file from src/assets/paintings/ and reference
-//      it below, same as the entries here.
+//   1. image — import a new file from src/assets/paintings/ and add an
+//      entry below, same as the entries here. Order in this list does not
+//      matter — the exported list is always sorted alphabetically by title.
 //   2. title, description — plain strings, edit freely. Update the
 //      spreadsheet too if you want it to stay the source of truth.
 // ---------------------------------------------------------------------------
@@ -21,20 +22,21 @@ import img8 from '../assets/paintings/8.jpg'
 import img9 from '../assets/paintings/9.jpg'
 import img10 from '../assets/paintings/10.jpg'
 
-// Display order: 8 (stove), 10 (tadur), 6 (middle state) lead the page —
-// matching the Films page order — then the rest continue in their original
-// numbering. Grid fills left-to-right, top-to-bottom.
-export const paintings = [
-  { id: 'painting-08', title: 'stove', image: img8, description: 'oil on canvas, 70 x 90 cm' },
-  { id: 'painting-10', title: 'tadur', image: img10, description: 'oil on canvas, 100 x 50 cm' },
-  { id: 'painting-06', title: 'middle state', image: img6, description: 'oil on canvas, 100 x 70 cm' },
+const paintingsData = [
   { id: 'painting-01', title: 'untitled', image: img1, description: 'oil on canvas, 90 x 90 cm' },
-  { id: 'painting-02', title: 'untitled', image: img2, description: 'oil on canvas, 120 x 60 cm' },
-  { id: 'painting-03', title: 'untitled', image: img3, description: 'oil on canvas, 45 x 45 cm' },
+  { id: 'painting-02', title: 'tadur', image: img2, description: 'oil on canvas, 100 x 50 cm' },
+  { id: 'painting-03', title: 'middle state', image: img3, description: 'oil on canvas, 100 x 70 cm' },
   { id: 'painting-04', title: 'untitled', image: img4, description: 'oil on canvas, 45 x 45 cm' },
   { id: 'painting-05', title: 'untitled', image: img5, description: 'oil on canvas, 69 x 51 cm' },
+  { id: 'painting-06', title: 'stove', image: img6, description: 'oil on canvas, 70 x 90 cm' },
   { id: 'painting-07', title: 'untitled', image: img7, description: 'oil on paper, 42 x 30 cm' },
+  { id: 'painting-08', title: 'untitled', image: img8, description: 'oil on canvas, 45 x 45 cm' },
   { id: 'painting-09', title: 'untitled', image: img9, description: 'oil on wood, 123 x 58 cm' },
+  { id: 'painting-10', title: 'untitled', image: img10, description: 'oil on canvas, 120 x 60 cm' },
 ]
+
+// Always alphabetical by title (gallery/card name), not by file name or
+// entry order, so new paintings added above slot into place automatically.
+export const paintings = [...paintingsData].sort((a, b) => a.title.localeCompare(b.title))
 
 export default paintings
