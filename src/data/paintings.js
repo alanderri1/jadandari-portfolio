@@ -24,10 +24,10 @@ import img7 from '../assets/paintings/7.jpg'
 
 const paintingsData = [
   { id: 'painting-01', number: 1, title: 'untitled', image: img1, description: 'oil on canvas, 90 x 90 cm' },
-  { id: 'painting-02', number: 2, title: 'tadur', image: img2, description: 'oil on canvas, 100 x 50 cm' },
-  { id: 'painting-03', number: 3, title: 'middle state', image: img3, description: 'oil on canvas, 100 x 70 cm' },
+  { id: 'painting-02', number: 2, title: 'untitled', image: img2, description: 'oil on wood, 123 x 58 cm' },
+  { id: 'painting-03', number: 3, title: 'untitled', image: img3, description: 'oil on canvas, 45 x 45 cm' },
   { id: 'painting-04', number: 4, title: 'untitled', image: img4, description: 'oil on canvas, 45 x 45 cm' },
-  { id: 'painting-05', number: 5, title: 'untitled', image: img5, description: 'oil on canvas, 69 x 51 cm' },
+  { id: 'painting-05', number: 5, title: 'untitled', image: img5, description: 'oil on canvas, 120 x 60 cm' },
   { id: 'painting-06', number: 6, title: 'stove', image: img6, description: 'oil on canvas, 70 x 90 cm' },
   { id: 'painting-07', number: 7, title: 'untitled', image: img7, description: 'oil on paper, 42 x 30 cm' },
 ]
