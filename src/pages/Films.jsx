@@ -7,7 +7,7 @@ export default function Films() {
     <div className="pt-28 pb-24 px-5 sm:px-10 max-w-7xl mx-auto">
       <BackButton />
 
-      <h1 className="font-display text-4xl sm:text-5xl mb-10 sm:mb-12">films</h1>
+      <h1 className="font-display text-4xl sm:text-5xl mb-10 sm:mb-12">select films</h1>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
         {films.map((film, i) => (
