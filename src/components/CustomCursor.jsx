@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
-import { motion, useMotionValue, useSpring } from 'framer-motion'
+import { motion, useMotionValue } from 'framer-motion'
 
 // A near-default arrow cursor for desktop pointer devices — recognizable as
-// a normal pointer, with a soft trailing accent-colored blob behind it for a touch
-// of hand-drawn character, and a slight tint/scale reaction on hover over
+// a normal pointer, with a slight tint/scale reaction on hover over
 // interactive elements. Fully inert on touch devices. Rendered above every
 // other layer (nav, lightbox) so it never disappears while hovering fixed
 // UI.
@@ -14,8 +13,6 @@ export default function CustomCursor() {
 
   const x = useMotionValue(-100)
   const y = useMotionValue(-100)
-  const trailX = useSpring(x, { damping: 26, stiffness: 260, mass: 0.5 })
-  const trailY = useSpring(y, { damping: 26, stiffness: 260, mass: 0.5 })
 
   useEffect(() => {
     const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches
@@ -56,18 +53,6 @@ export default function CustomCursor() {
       style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.3s ease' }}
       aria-hidden="true"
     >
-      {/* Soft trailing blob — the hand-drawn/painterly touch, lags slightly behind the tip */}
-      <motion.div
-        className="fixed top-0 left-0 rounded-full bg-accent"
-        animate={{
-          width: hoveringLink ? 30 : 16,
-          height: hoveringLink ? 30 : 16,
-          opacity: hoveringLink ? 0.22 : 0.14,
-        }}
-        transition={{ duration: 0.25, ease: 'easeOut' }}
-        style={{ x: trailX, y: trailY, translateX: '-50%', translateY: '-50%', filter: 'blur(2px)' }}
-      />
-
       {/* Arrow — a normal pointer silhouette, tip pinned exactly to the cursor position */}
       <motion.svg
         width="26"
