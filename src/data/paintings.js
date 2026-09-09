@@ -10,8 +10,8 @@
 //   2. title, description — plain strings, edit freely. Update the
 //      spreadsheet too if you want it to stay the source of truth.
 //
-// NOTE: The spreadsheet still lists paintings 8-10, but their image files
-// are missing from src/assets/paintings/, so those entries are omitted here.
+// NOTE: The spreadsheet still lists painting 10, but its image file is
+// missing from src/assets/paintings/, so that entry is omitted here.
 // ---------------------------------------------------------------------------
 
 import img1 from '../assets/paintings/1.jpg'
@@ -21,6 +21,8 @@ import img4 from '../assets/paintings/4.jpg'
 import img5 from '../assets/paintings/5.jpg'
 import img6 from '../assets/paintings/6.jpg'
 import img7 from '../assets/paintings/7.jpg'
+import img8 from '../assets/paintings/8.jpg'
+import img9 from '../assets/paintings/9.jpg'
 
 const paintingsData = [
   { id: 'painting-01', number: 1, title: 'untitled', image: img1, description: 'oil on canvas, 90 x 90 cm' },
@@ -30,6 +32,8 @@ const paintingsData = [
   { id: 'painting-05', number: 5, title: 'untitled', image: img5, description: 'oil on canvas, 120 x 60 cm' },
   { id: 'painting-06', number: 6, title: 'stove', image: img6, description: 'oil on canvas, 70 x 90 cm' },
   { id: 'painting-07', number: 7, title: 'untitled', image: img7, description: 'oil on paper, 42 x 30 cm' },
+  { id: 'painting-08', number: 8, title: 'tadur', image: img8, description: 'oil on canvas, 100 x 50 cm' },
+  { id: 'painting-09', number: 9, title: 'middle state', image: img9, description: 'oil on canvas, 100 x 70 cm' },
 ]
 
 // Ordered by image file number, not title, so the gallery order matches the
