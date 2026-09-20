@@ -9,7 +9,7 @@ const iconProps = {
   strokeWidth: 1.7,
   strokeLinecap: 'round',
   strokeLinejoin: 'round',
-  className: 'w-[18px] h-[18px]',
+  className: 'w-6 h-6',
 }
 
 const icons = {
@@ -60,15 +60,15 @@ const icons = {
 
 const SOCIALS = [
   // { label: 'Instagram', href: 'https://www.instagram.com/jad_al3ndari', icon: icons.instagram },
-  { label: 'YouTube', href: 'https://www.youtube.com/@jadandari', icon: icons.youtube },
-  { label: 'Letterboxd', href: 'https://letterboxd.com/director/jad-andari/', icon: icons.letterboxd },
-  { label: 'IMDb', href: 'https://www.imdb.com/name/nm9230848/', text: 'IMDb' },
-  { label: 'FilmFreeway', href: 'https://filmfreeway.com/JadAndari', icon: icons.filmfreeway },
-  {
-    label: "L'Orient-Le Jour",
-    href: 'https://today.lorientlejour.com/article/1295988/making-movies-in-lebanons-season-of-crises.html',
-    icon: icons.press,
-  },
+  // { label: 'YouTube', href: 'https://www.youtube.com/@jadandari', icon: icons.youtube },
+  // { label: 'Letterboxd', href: 'https://letterboxd.com/director/jad-andari/', icon: icons.letterboxd },
+  // { label: 'IMDb', href: 'https://www.imdb.com/name/nm9230848/', text: 'IMDb' },
+  // { label: 'FilmFreeway', href: 'https://filmfreeway.com/JadAndari', icon: icons.filmfreeway },
+  // {
+  //   label: "L'Orient-Le Jour",
+  //   href: 'https://today.lorientlejour.com/article/1295988/making-movies-in-lebanons-season-of-crises.html',
+  //   icon: icons.press,
+  // },
   { label: 'Shop (Etsy)', href: 'https://jadpaintingprints.etsy.com/', icon: icons.store },
 ]
 
@@ -84,9 +84,9 @@ export default function SocialLinks() {
           aria-label={s.label}
           title={s.label}
           data-cursor-hover
-          className="w-9 h-9 rounded-full border border-ink/20 text-ink/70 flex items-center justify-center hover:border-accent hover:text-accent transition-colors"
+          className="w-[52px] h-[52px] rounded-full border border-ink/20 text-ink/70 flex items-center justify-center hover:border-accent hover:text-accent transition-colors"
         >
-          {s.icon || <span className="text-[9px] font-bold tracking-tight">{s.text}</span>}
+          {s.icon || <span className="text-xs font-bold tracking-tight">{s.text}</span>}
         </a>
       ))}
     </div>
