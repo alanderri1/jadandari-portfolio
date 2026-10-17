@@ -38,22 +38,27 @@ export default function Home() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-wrap items-center justify-center gap-4"
+          className="flex flex-col items-center gap-3"
         >
-          <Link
-            to="/paintings"
-            data-cursor-hover
-            className="px-10 py-3.5 rounded-full bg-ink text-canvas text-sm tracking-[0.15em] hover:bg-accent transition-colors"
-          >
-            paintings
-          </Link>
-          <Link
-            to="/films"
-            data-cursor-hover
-            className="px-10 py-3.5 rounded-full bg-ink text-canvas text-sm tracking-[0.15em] hover:bg-accent transition-colors"
-          >
-            films
-          </Link>
+          <span className="text-sm tracking-[0.15em] text-ink/60">
+            selected works:
+          </span>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link
+              to="/paintings"
+              data-cursor-hover
+              className="px-10 py-3.5 rounded-full bg-ink text-canvas text-sm tracking-[0.15em] hover:bg-accent transition-colors"
+            >
+              paintings
+            </Link>
+            <Link
+              to="/films"
+              data-cursor-hover
+              className="px-10 py-3.5 rounded-full bg-ink text-canvas text-sm tracking-[0.15em] hover:bg-accent transition-colors"
+            >
+              films
+            </Link>
+          </div>
         </motion.div>
 
         {/* Socials */}
